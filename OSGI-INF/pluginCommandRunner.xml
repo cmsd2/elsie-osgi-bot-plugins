@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" activate="activate" deactivate="deactivate" immediate="true" name="uk.org.elsie.osgi.bot.pm.PrivmsgPluginCommandRunner">
+   <implementation class="uk.org.elsie.osgi.bot.pm.PrivmsgPluginCommandRunnerImpl"/>
+   <reference bind="setPluginManager" cardinality="1..1" interface="uk.org.elsie.osgi.bot.pm.PluginCommandManager" name="PluginCommandManager" policy="static" unbind="unsetPluginManager"/>
+   <service>
+      <provide interface="uk.org.elsie.osgi.bot.pm.PrivmsgPluginCommandRunner"/>
+      <provide interface="org.osgi.service.event.EventHandler"/>
+   </service>
+   <property name="plugin.command.prefix" type="String" value="!"/>
+   <property name="event.topics" type="String" value="elsie/irc/privmsg"/>
+   <reference bind="setIrcSession" cardinality="1..1" interface="uk.org.elsie.osgi.bot.IrcSessionService" name="IrcSessionService" policy="static" unbind="unsetIrcSession"/>
+</scr:component>

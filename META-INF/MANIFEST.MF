@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Pm
+Bundle-SymbolicName: uk.org.elsie.osgi.bot.pm
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: uk.org.elsie.osgi.bot.pm.Activator
+Bundle-Vendor: uk.org.elsie
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Import-Package: org.apache.commons.logging;version="1.0.4",
+ org.osgi.framework;version="1.3.0",
+ org.osgi.service.cm;version="1.2.1",
+ org.osgi.service.component;version="1.1.0",
+ org.osgi.service.event;version="1.2.0",
+ org.osgi.util.tracker;version="1.4.0",
+ uk.org.elsie.osgi.bot
+Export-Package: uk.org.elsie.osgi.bot.pm
+Bundle-ActivationPolicy: lazy
+Service-Component: OSGI-INF/pluginCommandManager.xml, OSGI-INF/pluginCommandRunner.xml, OSGI-INF/pluginHelp.xml, OSGI-INF/channelConfigurationAdmin.xml
